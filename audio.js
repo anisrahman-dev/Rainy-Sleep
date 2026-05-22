@@ -10,7 +10,7 @@
   window.USE_REAL_AUDIO = true;
 
   const SOUNDS = {
-    rain:    { file: "sounds/boons_freak-rain-sound-188158.mp3",             base: 1.00, defaultOn: true,  defaultVol: 60 },
+    rain:    { file: "sounds/boons_freak-rain-sound-188158.mp3",             base: 1.00, defaultOn: true,  defaultVol: 70 },
     thunder: { file: "sounds/soundreality-thunder-sound-375727.mp3",         base: 0.90, defaultOn: false, defaultVol: 0  },
     wind:    { file: "sounds/soundreality-wind-blowing-457954.mp3",          base: 0.70, defaultOn: false, defaultVol: 0  },
     waves:   { file: "sounds/freesound_community-waves-53479.mp3",           base: 0.80, defaultOn: false, defaultVol: 0  },
