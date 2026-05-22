@@ -146,6 +146,9 @@ function createCampfireCrackleBuffer(ctx, seconds = 4) {
 function initAudioEngine() {
   if (state.audioCtx) return;
 
+  // Real-audio engine (audio.js) has taken over — skip procedural synth.
+  if (window.USE_REAL_AUDIO) return;
+
   const AudioContext = window.AudioContext || window.webkitAudioContext;
   state.audioCtx = new AudioContext();
 
@@ -713,6 +716,7 @@ function updateMusicSynth() {
 }
 
 function applySoundLevels() {
+  if (window.USE_REAL_AUDIO) return; // audio.js handles channel volumes
   Object.keys(state.sounds).forEach(key => {
     const config = state.sounds[key];
     const slider = document.getElementById(`slider-${key}`);
@@ -1147,6 +1151,7 @@ function loadPreset(presetKey) {
 // --- 7. PLAY / PAUSE LOGIC ---
 
 function playEngine() {
+  if (window.USE_REAL_AUDIO) return; // audio.js handles playback
   if (!state.audioCtx) {
     initAudioEngine();
   }
@@ -1165,6 +1170,7 @@ function playEngine() {
 }
 
 function pauseEngine() {
+  if (window.USE_REAL_AUDIO) return; // audio.js handles playback
   if (!state.audioCtx) return;
 
   state.masterGain.gain.setValueAtTime(state.masterGain.gain.value, state.audioCtx.currentTime);
