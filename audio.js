@@ -10,12 +10,11 @@
   window.USE_REAL_AUDIO = true;
 
   const SOUNDS = {
-    rain:    { file: "sounds/rain.mp3",    base: 1.00, defaultOn: true,  defaultVol: 60 },
-    thunder: { file: "sounds/thunder.mp3", base: 0.90, defaultOn: false, defaultVol: 0  },
-    wind:    { file: "sounds/wind.mp3",    base: 0.70, defaultOn: false, defaultVol: 0  },
-    waves:   { file: "sounds/waves.mp3",   base: 0.80, defaultOn: false, defaultVol: 0  },
-    fire:    { file: "sounds/fire.mp3",    base: 0.80, defaultOn: false, defaultVol: 0  },
-    music:   { file: "sounds/music.mp3",   base: 0.60, defaultOn: false, defaultVol: 20 },
+    rain:    { file: "sounds/mindmist-rain-sound-307165.mp3",                base: 1.00, defaultOn: true,  defaultVol: 60 },
+    thunder: { file: "sounds/soundreality-thunder-sound-375727.mp3",         base: 0.90, defaultOn: false, defaultVol: 0  },
+    wind:    { file: "sounds/soundreality-wind-blowing-457954.mp3",          base: 0.70, defaultOn: false, defaultVol: 0  },
+    waves:   { file: "sounds/freesound_community-waves-53479.mp3",           base: 0.80, defaultOn: false, defaultVol: 0  },
+    fire:    { file: "sounds/soundreality-fire-crackling-528620.mp3",        base: 0.80, defaultOn: false, defaultVol: 0  },
   };
 
   const channels = {};
@@ -30,7 +29,6 @@
       el.loop = true;
       el.preload = "auto";
       el.volume = 0; // start silent; we'll ramp on play
-      el.crossOrigin = "anonymous";
       el.addEventListener("error", () => {
         console.warn(`[audio] missing file: ${cfg.file} — drop it into /sounds/`);
       });
