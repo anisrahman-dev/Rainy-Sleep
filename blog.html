@@ -12,7 +12,6 @@
   <meta name="theme-color" content="#0b0c10">
   <link rel="canonical" href="https://rainscape.site/blog">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rainscape">
   <meta property="og:title" content="Rain Sounds Blog | Rainscape — Sleep, Focus &amp; Storm Soundscapes">
@@ -23,13 +22,11 @@
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rain Sounds Blog | Rainscape">
   <meta name="twitter:description" content="Guides and soundscapes for sleep, focus, ASMR, study, and meditation.">
   <meta name="twitter:image" content="https://rainscape.site/background.png">
 
-  <!-- Manifest & Icons -->
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -42,7 +39,6 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
 
-  <!-- Structured data: Blog + Breadcrumb + ItemList -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,7 +52,7 @@
         "publisher": {
           "@type": "Organization",
           "name": "Rainscape",
-          "logo": { "@type": "ImageObject", "url": "https://rainscape.site/background.png" }
+          "logo": { "@type": "ImageObject", "url": "https://rainscape.site/icon-512.png" }
         }
       },
       {
@@ -92,100 +88,40 @@
   </script>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Page backdrop with subtle texture */
     body {
       background:
-        radial-gradient(1200px 600px at 50% -100px, rgba(120, 140, 200, 0.18), transparent 60%),
-        radial-gradient(900px 500px at 80% 30%, rgba(80, 120, 180, 0.08), transparent 70%),
+        radial-gradient(700px 400px at 50% -50px, rgba(120, 140, 200, 0.10), transparent 70%),
         #0b0c10;
     }
-
-    /* Post card with gradient cover art */
     .post-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 28px;
       border-radius: 20px;
-      overflow: hidden;
-      transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .35s;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, background-color .3s;
+      height: 100%;
     }
     .post-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.15);
-      box-shadow: 0 20px 60px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.04);
     }
-    .post-cover {
-      height: 180px;
-      position: relative;
-      overflow: hidden;
+    .post-card .glyph {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.85);
     }
-    .post-cover::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at center top, rgba(255,255,255,0.10), transparent 70%),
-        linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4) 100%);
-      pointer-events: none;
-    }
-    .post-cover .glyph {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 64px;
-      color: rgba(255,255,255,0.55);
-      text-shadow: 0 4px 30px rgba(0,0,0,0.45);
-      transition: transform .5s cubic-bezier(.2,.7,.2,1), color .3s;
-    }
-    .post-card:hover .post-cover .glyph {
-      transform: scale(1.08);
-      color: rgba(255,255,255,0.75);
-    }
-
-    /* Distinct mood gradients */
-    .mood-night { background: linear-gradient(135deg, #1a2540 0%, #0d1325 50%, #1f1a3a 100%); }
-    .mood-storm { background: linear-gradient(135deg, #2a3548 0%, #1a2030 50%, #3a2d4a 100%); }
-    .mood-cabin { background: linear-gradient(135deg, #4a2e1f 0%, #2a1810 50%, #5a3a25 100%); }
-    .mood-window { background: linear-gradient(135deg, #1f3a4a 0%, #122430 50%, #2a4858 100%); }
-    .mood-asmr { background: linear-gradient(135deg, #3a2a4a 0%, #1f152a 50%, #4a3055 100%); }
-    .mood-cozy { background: linear-gradient(135deg, #6a3520 0%, #3a1f12 50%, #7a4528 100%); }
-    .mood-forest { background: linear-gradient(135deg, #1f3a2a 0%, #122418 50%, #2a4a35 100%); }
-    .mood-nature { background: linear-gradient(135deg, #1f3a4a 0%, #122a30 50%, #2a5848 100%); }
-    .mood-focus { background: linear-gradient(135deg, #2a2a4a 0%, #15152a 50%, #353555 100%); }
-    .mood-white { background: linear-gradient(135deg, #3a3a4a 0%, #1f1f2a 50%, #4a4a5a 100%); }
-    .mood-noads { background: linear-gradient(135deg, #2a3a3a 0%, #152525 50%, #3a4a4a 100%); }
-
-    .meta-pill {
+    .post-card .glyph span { font-size: 22px; }
+    .tag-pill {
       font-size: 10px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-    }
-
-    /* Featured (hero) card */
-    .featured-card {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      isolation: isolate;
-      min-height: 380px;
-      display: flex;
-      align-items: flex-end;
-      transition: transform .4s cubic-bezier(.2,.7,.2,1);
-    }
-    .featured-card:hover { transform: translateY(-3px); }
-    .featured-card::before {
-      content: '';
-      position: absolute; inset: 0; z-index: -2;
-      background:
-        radial-gradient(ellipse at 30% 20%, rgba(140, 170, 220, 0.22), transparent 60%),
-        linear-gradient(135deg, #1a2540 0%, #0d1325 50%, #1f1a3a 100%);
-    }
-    .featured-card::after {
-      content: '';
-      position: absolute; inset: 0; z-index: -1;
-      background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.5) 100%);
+      color: rgba(255,255,255,0.40);
     }
   </style>
 </head>
@@ -201,155 +137,119 @@
   </header>
 
   <main class="relative z-10 pt-8 pb-24 px-margin-mobile md:px-gutter">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-5xl mx-auto">
 
-      <!-- Page intro -->
-      <header class="space-y-4 pb-14 text-center max-w-2xl mx-auto">
-        <span class="meta-pill">The Rain Journal</span>
-        <h1 class="font-display text-[44px] md:text-[68px] text-white leading-[1.02] font-medium">Stories of rain,<br/>sleep &amp; storms</h1>
-        <p class="font-body text-base md:text-lg text-white/60 leading-relaxed pt-2">Guides, soundscapes, and field recordings — all ad-free, all rain.</p>
+      <!-- Intro -->
+      <header class="text-center max-w-xl mx-auto mb-20">
+        <span class="tag-pill">The Rain Journal</span>
+        <h1 class="font-display text-[44px] md:text-[64px] text-white leading-[1.02] font-medium mt-4">Stories of rain, sleep &amp; storms</h1>
+        <p class="font-body text-base md:text-lg text-white/55 leading-relaxed mt-5">Guides and soundscapes for sleep, focus, ASMR, and meditation.</p>
       </header>
 
-      <!-- Featured Post (large hero card) -->
-      <a href="rain-sounds-for-sleeping-24-hours.html" class="featured-card block p-8 md:p-12 mb-14 group">
-        <div class="max-w-2xl space-y-4 text-white relative z-10">
-          <span class="meta-pill text-white/70">Featured · Sleep · 24 hours</span>
-          <h2 class="font-display text-[32px] md:text-[52px] leading-[1.05] font-medium">Rain Sounds for Sleeping 24 Hours</h2>
-          <p class="font-body text-base text-white/75 leading-relaxed max-w-xl">Heavy rain all night for insomnia relief — continuous rainfall recorded in Australia, ideal for deep sleep, focus, and stress relief.</p>
-          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white/85 group-hover:text-white pt-3">
-            Read the article
-            <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
-          </span>
-        </div>
-        <!-- floating glyph -->
-        <span class="material-symbols-outlined absolute top-8 right-8 md:top-12 md:right-12 text-[120px] md:text-[180px] text-white/[0.07] leading-none select-none">bedtime</span>
-      </a>
+      <!-- All posts grid -->
+      <section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-      <!-- Posts grid -->
-      <section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <a href="heavy-rain-thunder-1-hour-rain-sounds-for-sleep.html" class="post-card group">
-          <div class="post-cover mood-storm"><span class="glyph material-symbols-outlined">thunderstorm</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">Storm · 1 hour</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Heavy Rain &amp; Thunder for Sleep</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">Real recorded thunderstorm for insomnia relief and fast sleep onset.</p>
-          </div>
+        <a href="/rain-sounds-for-sleeping-24-hours" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">bedtime</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Rain Sounds for Sleeping 24 Hours</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Heavy rain all night for insomnia relief.</p>
+          <span class="tag-pill mt-auto pt-3">Sleep · 24 hours</span>
         </a>
 
-        <a href="powerful-night-thunderstorm-heavy-rain-thunder-1-hour.html" class="post-card group">
-          <div class="post-cover mood-night"><span class="glyph material-symbols-outlined">storm</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">Storm · 1 hour</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Powerful Night Thunderstorm</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">Heavy rain, rolling thunder, and windy rain — recorded from a car window during a real storm.</p>
-          </div>
+        <a href="/heavy-rain-thunder-1-hour-rain-sounds-for-sleep" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">thunderstorm</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Heavy Rain &amp; Thunder for Sleep</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Real recorded thunderstorm for fast sleep onset.</p>
+          <span class="tag-pill mt-auto pt-3">Storm · 1 hour</span>
         </a>
 
-        <a href="heavy-rain-on-tin-roof-1-hour-thunderstorm.html" class="post-card group">
-          <div class="post-cover mood-cabin"><span class="glyph material-symbols-outlined">cottage</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">Cabin · 1 hour</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Heavy Rain on a Tin Roof</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">The classic metal-roof rainstorm — cabin ambience for deep sleep and reading.</p>
-          </div>
+        <a href="/powerful-night-thunderstorm-heavy-rain-thunder-1-hour" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">storm</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Powerful Night Thunderstorm</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Heavy rain, rolling thunder, and windy rain.</p>
+          <span class="tag-pill mt-auto pt-3">Storm · 1 hour</span>
         </a>
 
-        <a href="windy-rain-and-thunder-sound-2-hours-rain-sounds-for-sleep.html" class="post-card group">
-          <div class="post-cover mood-storm"><span class="glyph material-symbols-outlined">air</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">Storm · 2 hours</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Windy Rain &amp; Thunder</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">2 hours of heavy rain with thunder to help you fall asleep fast.</p>
-          </div>
+        <a href="/heavy-rain-on-tin-roof-1-hour-thunderstorm" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">cottage</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Heavy Rain on a Tin Roof</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">The classic metal-roof rainstorm for deep sleep.</p>
+          <span class="tag-pill mt-auto pt-3">Cabin · 1 hour</span>
         </a>
 
-        <a href="rain-sound-on-window-with-thunder-sounds.html" class="post-card group">
-          <div class="post-cover mood-window"><span class="glyph material-symbols-outlined">water_drop</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">Window · 8 hours</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Rain on Window with Thunder</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">Cozy mountain hotel rainstorm for sleep, study, and meditation.</p>
-          </div>
+        <a href="/windy-rain-and-thunder-sound-2-hours-rain-sounds-for-sleep" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">air</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Windy Rain &amp; Thunder</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">2 hours of heavy rain with thunder.</p>
+          <span class="tag-pill mt-auto pt-3">Storm · 2 hours</span>
         </a>
 
-        <a href="rain-sounds-asmr-heavy-rain-on-window-30-minute.html" class="post-card group">
-          <div class="post-cover mood-asmr"><span class="glyph material-symbols-outlined">graphic_eq</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">ASMR · 30 min</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">ASMR Heavy Rain on Window</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">Soothing rainfall to help you fall asleep fast and calm a restless mind.</p>
-          </div>
+        <a href="/rain-sound-on-window-with-thunder-sounds" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">water_drop</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Rain on Window with Thunder</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Cozy mountain hotel rainstorm for sleep and study.</p>
+          <span class="tag-pill mt-auto pt-3">Window · 8 hours</span>
         </a>
 
-        <a href="rainy-night-cabin-ambience-with-fireplace.html" class="post-card group">
-          <div class="post-cover mood-cozy"><span class="glyph material-symbols-outlined">local_fire_department</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">Cozy · 12 hours</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Rainy Cabin with Fireplace</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">Warm rain and crackling fireplace — the ultimate cozy night ambience.</p>
-          </div>
+        <a href="/rain-sounds-asmr-heavy-rain-on-window-30-minute" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">graphic_eq</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">ASMR Heavy Rain on Window</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Soothing rainfall to fall asleep fast.</p>
+          <span class="tag-pill mt-auto pt-3">ASMR · 30 min</span>
         </a>
 
-        <a href="rainfall-on-forest-foliage-rainstorm-sounds-for-sleeping.html" class="post-card group">
-          <div class="post-cover mood-forest"><span class="glyph material-symbols-outlined">forest</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">Forest · 10 hours</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Rainfall on Forest Foliage</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">Rain on leaves with no thunder — for deep sleep, focus, and meditation.</p>
-          </div>
+        <a href="/rainy-night-cabin-ambience-with-fireplace" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">local_fire_department</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Rainy Cabin with Fireplace</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Warm rain and crackling fire for deep sleep.</p>
+          <span class="tag-pill mt-auto pt-3">Cozy · 12 hours</span>
         </a>
 
-        <a href="relaxing-rain-noise-forest-stream-water-sounds-for-sleeping.html" class="post-card group">
-          <div class="post-cover mood-nature"><span class="glyph material-symbols-outlined">waves</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">Nature · 10 hours</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Relaxing Rain &amp; Forest Stream</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">Layered water white noise for deeper, longer sleep.</p>
-          </div>
+        <a href="/rainfall-on-forest-foliage-rainstorm-sounds-for-sleeping" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">forest</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Rainfall on Forest Foliage</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Rain on leaves — no thunder, pure nature.</p>
+          <span class="tag-pill mt-auto pt-3">Forest · 10 hours</span>
         </a>
 
-        <a href="rain-sounds-for-studying-focus-10-hours.html" class="post-card group">
-          <div class="post-cover mood-focus"><span class="glyph material-symbols-outlined">menu_book</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">Focus · 10 hours</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Rain Sounds for Studying</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">Forest rain white noise for deep focus and Pomodoro sessions.</p>
-          </div>
+        <a href="/relaxing-rain-noise-forest-stream-water-sounds-for-sleeping" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">waves</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Relaxing Rain &amp; Forest Stream</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Layered water white noise for deeper sleep.</p>
+          <span class="tag-pill mt-auto pt-3">Nature · 10 hours</span>
         </a>
 
-        <a href="rain-noise-generator-white-noise-no-thunder.html" class="post-card group">
-          <div class="post-cover mood-white"><span class="glyph material-symbols-outlined">tune</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">White Noise · 10 hours</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">Rain Noise Generator</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">Pure rain white noise — predictable, clean, no thunder.</p>
-          </div>
+        <a href="/rain-sounds-for-studying-focus-10-hours" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">menu_book</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Rain Sounds for Studying</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Forest rain white noise for deep focus.</p>
+          <span class="tag-pill mt-auto pt-3">Focus · 10 hours</span>
         </a>
 
-        <a href="rain-sounds-no-ads-front-porch-10-hours.html" class="post-card group">
-          <div class="post-cover mood-noads"><span class="glyph material-symbols-outlined">do_not_disturb_on</span></div>
-          <div class="p-6 space-y-2.5">
-            <span class="meta-pill">No Ads · 10 hours</span>
-            <h3 class="font-display text-xl text-white font-medium leading-snug">No-Ads Front Porch Rain</h3>
-            <p class="font-body text-sm text-white/55 leading-relaxed">10 hours of front porch rain — truly ad-free and no signup.</p>
-          </div>
+        <a href="/rain-noise-generator-white-noise-no-thunder" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">tune</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">Rain Noise Generator</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">Pure rain white noise — predictable and clean.</p>
+          <span class="tag-pill mt-auto pt-3">White Noise · 10 hours</span>
+        </a>
+
+        <a href="/rain-sounds-no-ads-front-porch-10-hours" class="post-card">
+          <div class="glyph"><span class="material-symbols-outlined">do_not_disturb_on</span></div>
+          <h2 class="font-display text-xl text-white font-medium leading-snug">No-Ads Front Porch Rain</h2>
+          <p class="font-body text-sm text-white/50 leading-relaxed">10 hours of front porch rain — truly ad-free.</p>
+          <span class="tag-pill mt-auto pt-3">No Ads · 10 hours</span>
         </a>
 
       </section>
 
-      <!-- Bottom CTA -->
-      <section class="text-center pt-20">
-        <div class="inline-flex flex-col items-center gap-4 px-10 py-10 rounded-3xl border border-white/10 bg-white/[0.025]">
-          <span class="material-symbols-outlined text-white/60 text-4xl">cloud</span>
-          <h3 class="font-display text-2xl md:text-3xl text-white font-medium">Ready to listen?</h3>
-          <p class="font-body text-sm text-white/55 max-w-xs">Open the live player and let the rain fall — no ads, no signup.</p>
-          <a href="/" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black hover:bg-white/90 transition-all text-xs uppercase tracking-widest font-semibold mt-2">
-            <span class="material-symbols-outlined text-base">play_arrow</span>
-            <span>Open the player</span>
-          </a>
-        </div>
-      </section>
+      <!-- Simple closing line -->
+      <div class="text-center mt-24">
+        <p class="font-display text-2xl md:text-3xl text-white/85 leading-snug">Pure rain. No ads. Forever.</p>
+        <a href="/" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-black hover:bg-white/90 transition-all text-xs uppercase tracking-widest font-semibold mt-8">
+          <span class="material-symbols-outlined text-base">play_arrow</span>
+          <span>Open the player</span>
+        </a>
+      </div>
 
     </div>
   </main>
@@ -357,11 +257,11 @@
   <footer class="w-full flex flex-col items-center justify-center px-margin-mobile md:px-gutter py-8 mt-auto z-10 border-t border-white/[0.06] text-center">
     <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-4">
       <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="/">Home</a>
-      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="about.html">About</a>
-      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="blog.html">Blog</a>
-      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="contact.html">Contact</a>
-      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="terms.html">Terms</a>
-      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="privacy.html">Privacy</a>
+      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="/about">About</a>
+      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="/blog">Blog</a>
+      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="/contact">Contact</a>
+      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="/terms">Terms</a>
+      <a class="font-body text-[10px] text-white/45 hover:text-white uppercase tracking-widest transition-colors" href="/privacy">Privacy</a>
     </div>
     <div class="font-body text-[10px] text-white/40">© 2026 Rainscape. Crafted with procedural synthesis.</div>
   </footer>
