@@ -1,0 +1,27 @@
+{
+  "name": "Rainy Mood",
+  "short_name": "Rainy Mood",
+  "description": "No-ads rain sounds for sleeping — heavy rain and thunder, ASMR rainfall, and black-screen night mode. Pure rain, all night.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0c10",
+  "theme_color": "#0b0c10",
+  "lang": "en",
+  "categories": ["lifestyle", "music", "health", "productivity"],
+  "icons": [
+    {
+      "src": "/background.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/hero-bg.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
