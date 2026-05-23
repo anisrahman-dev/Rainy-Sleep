@@ -51,6 +51,30 @@
   <script id="tailwind-config">
     tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface": "#e4e2e4", "background": "#0b0c10", "glass-white": "rgba(255, 255, 255, 0.05)", "glass-border": "rgba(255, 255, 255, 0.08)" }, spacing: { "stack-md": "2.5rem", "margin-mobile": "1.5rem", "stack-sm": "1rem", "container-max": "1200px", "stack-xl": "6rem", "gutter": "2rem" }, fontFamily: { "body": ["Hanken Grotesk", "sans-serif"], "display": ["EB Garamond", "serif"] } } } }
   </script>
+  <style>
+    .related-card {
+      display: flex; flex-direction: column; gap: 10px;
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, background-color .3s;
+      height: 100%;
+    }
+    .related-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.04);
+    }
+    .related-glyph {
+      width: 38px; height: 38px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.85);
+    }
+    .related-glyph span { font-size: 18px; }
+  </style>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-body text-on-surface flex flex-col min-h-screen relative overflow-x-hidden">
@@ -144,6 +168,58 @@
       </section>
 
     </article>
+  
+    <!-- Related Articles (cross-linking for SEO + UX) -->
+    <section class="relative z-10 px-margin-mobile md:px-gutter pb-20 pt-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="border-t border-white/[0.06] pt-12">
+          <div class="flex items-baseline justify-between flex-wrap gap-3 mb-8">
+            <h2 class="font-display text-2xl md:text-3xl text-white font-medium leading-tight">More from the journal</h2>
+            <a href="/blog" class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-white/50 hover:text-white transition-colors shrink-0">
+              All articles <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="/heavy-rain-on-tin-roof-1-hour-thunderstorm" class="related-card">
+          <div class="related-glyph"><span class="material-symbols-outlined">cottage</span></div>
+          <h3 class="font-display text-lg text-white font-medium leading-snug">Heavy Rain on a Tin Roof</h3>
+          <p class="font-body text-xs text-white/55 leading-relaxed">The classic metal-roof rainstorm for deep sleep.</p>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-white/35 mt-auto pt-2">Cabin · 1 hour</span>
+        </a>
+        <a href="/windy-rain-and-thunder-sound-2-hours-rain-sounds-for-sleep" class="related-card">
+          <div class="related-glyph"><span class="material-symbols-outlined">air</span></div>
+          <h3 class="font-display text-lg text-white font-medium leading-snug">Windy Rain & Thunder</h3>
+          <p class="font-body text-xs text-white/55 leading-relaxed">2 hours of heavy rain with thunder.</p>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-white/35 mt-auto pt-2">Storm · 2 hours</span>
+        </a>
+        <a href="/rain-sound-on-window-with-thunder-sounds" class="related-card">
+          <div class="related-glyph"><span class="material-symbols-outlined">water_drop</span></div>
+          <h3 class="font-display text-lg text-white font-medium leading-snug">Rain on Window with Thunder</h3>
+          <p class="font-body text-xs text-white/55 leading-relaxed">Cozy mountain hotel rainstorm for sleep and study.</p>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-white/35 mt-auto pt-2">Window · 8 hours</span>
+        </a>
+        <a href="/rain-sounds-asmr-heavy-rain-on-window-30-minute" class="related-card">
+          <div class="related-glyph"><span class="material-symbols-outlined">graphic_eq</span></div>
+          <h3 class="font-display text-lg text-white font-medium leading-snug">ASMR Heavy Rain on Window</h3>
+          <p class="font-body text-xs text-white/55 leading-relaxed">Soothing rainfall to fall asleep fast.</p>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-white/35 mt-auto pt-2">ASMR · 30 min</span>
+        </a>
+        <a href="/rainy-night-cabin-ambience-with-fireplace" class="related-card">
+          <div class="related-glyph"><span class="material-symbols-outlined">local_fire_department</span></div>
+          <h3 class="font-display text-lg text-white font-medium leading-snug">Rainy Cabin with Fireplace</h3>
+          <p class="font-body text-xs text-white/55 leading-relaxed">Warm rain and crackling fire for deep sleep.</p>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-white/35 mt-auto pt-2">Cozy · 12 hours</span>
+        </a>
+        <a href="/rainfall-on-forest-foliage-rainstorm-sounds-for-sleeping" class="related-card">
+          <div class="related-glyph"><span class="material-symbols-outlined">forest</span></div>
+          <h3 class="font-display text-lg text-white font-medium leading-snug">Rainfall on Forest Foliage</h3>
+          <p class="font-body text-xs text-white/55 leading-relaxed">Rain on leaves — no thunder, pure nature.</p>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-white/35 mt-auto pt-2">Forest · 10 hours</span>
+        </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="w-full flex flex-col items-center justify-center px-margin-mobile md:px-gutter py-8 mt-auto z-10 border-t border-glass-border bg-glass-white/5 backdrop-blur-md text-center">
