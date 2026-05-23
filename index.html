@@ -231,10 +231,10 @@
   <!-- Top Navigation Bar -->
   <header class="relative w-full z-40 px-margin-mobile md:px-gutter py-5 bg-gradient-to-b from-black/50 to-transparent">
     <div class="relative w-full max-w-container-max mx-auto flex items-center justify-between">
-      <!-- Title Logo (Centered on page, hidden on small screen, flex otherwise) -->
-      <div class="font-display text-[26px] md:text-[32px] text-white tracking-wide text-glow font-medium">
+      <!-- Title Logo (clicking scrolls to top of home) -->
+      <a href="/" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="font-display text-[26px] md:text-[32px] text-white tracking-wide text-glow font-medium hover:opacity-80 transition-opacity cursor-pointer" aria-label="Back to top">
         Rainscape
-      </div>
+      </a>
       
       <!-- Top Right Controls -->
       <div class="flex items-center gap-5">
